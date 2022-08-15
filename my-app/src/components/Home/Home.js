@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './Home.module.css';
 import heroImage from '../../images/ecommerce3.png'
-import ButtonPrimary from "../ui/ButtonPrimary.js";
+import ButtonPrimary from "../ui/ButtonPrimary";
 import Footer from "../Footer/Footer";
 
 function Home() {
