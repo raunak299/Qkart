@@ -1,0 +1,24 @@
+.footer {
+    border-top-style: solid;
+    /* border-top-color: hsl(211, 58%, 92%); */
+    border-top-color: #e3eef7;
+
+}
+
+.footer-socialmedia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.5rem;
+}
+
+.footer-socialmedia i {
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+    color: #102a42;
+}
+
+.footer-socialmedia i:hover {
+    color: #328fdb;
+}

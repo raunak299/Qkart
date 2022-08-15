@@ -1,0 +1,16 @@
+.btn {
+    /* width: 3rem; */
+    max-width: 5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    /* background: #1faee7; */
+    background: #328fdb;
+    line-height: .3;
+    font-size: .9rem;
+    color: aliceblue;
+}
+
+.btn:hover {
+    background: #294f71;
+    /* background: #3c71a0 */
+}
