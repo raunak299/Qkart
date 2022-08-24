@@ -48,13 +48,21 @@
 }
 
 
-.auth-form div input {
+
+/* .auth-form div input { */
+.input-field {
     height: 2rem;
     border-radius: 5px;
     border-style: none;
     background: #e3eef7;
     width: 100%;
     margin-top: .7rem;
+}
+
+.invalidField {
+    border-style: solid;
+    border-color: rgb(191, 55, 55);
+
 }
 
 .auth-form div input:focus {
@@ -77,4 +85,11 @@ label {
     padding-left: .3rem;
     color: #328fdb;
     font-weight: bold
+}
+
+
+.invalidField {
+    border-style: solid;
+    border-color: rgb(191, 55, 55);
+
 }
