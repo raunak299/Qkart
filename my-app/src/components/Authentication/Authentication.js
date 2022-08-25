@@ -14,6 +14,12 @@ function Authentication() {
     }
 
 
+    const [notificationMsg, setNotification] = useState('');
+    const setNotificationHandler = () => {
+        setNotification('');
+    }
+
+
     const {
         inputFieldData: nameInputData,
         isInputFieldTouched: nameInputTouched,
@@ -25,6 +31,9 @@ function Authentication() {
 
     const nameChangeHandler = (e) => {
         nameInputChangeHandler(e.target.value.trim());
+    }
+    const nameBlurHandler = () => {
+        !nameInputValid && setNotification('Name field cannot be empty !!');
     }
 
 
@@ -41,11 +50,14 @@ function Authentication() {
     } = useAuthFormValidity((input) => (input.length > 0 && input.includes('@') && input.includes('.com')));
 
     const emailChangeHandler = (e) => {
+        if (!nameInputValid && nameInputTouched) {
+            setNotification('Name field cannot be empty !!');
+            return;
+        }
         emailInputChangeHandler(e.target.value.trim());
     }
-
     const emailBlurHandler = () => {
-        !emailInputValid && alert('email should be of format abc@xyz.com');
+        !emailInputValid && setNotification('Email should be of format abc@xyz.com !!');
     }
 
 
@@ -58,41 +70,91 @@ function Authentication() {
         setInputFieldTouch: setPasswordInputTouched,
         inputFieldChangeHandler: passwordInputChangeHandler,
         isInputFieldValid: passwordInputValid
-    } = useAuthFormValidity((input) => input.length > 0);
+    } = useAuthFormValidity((input) => input.length > 8);
 
     const passwordChangeHandler = (e) => {
+        if (!emailInputValid && emailInputTouched) {
+            setNotification("Minimum password length should be 8!!")
+            return;
+        }
         passwordInputChangeHandler(e.target.value.trim());
     }
+    const passwordBlurHandler = () => {
+        !passwordInputValid && setNotification("Minimum password length should be 8!!")
+    }
+
+
+
+
+
+    const getJson = async (url) => {
+        let response = await fetch(url,
+            {
+                method: 'POST',
+                body: JSON.stringify({
+                    email: emailInputData,
+                    password: passwordInputData,
+                    name: nameInputData
+                }),
+                headers: {
+                    'content-type': 'application/json'
+                }
+            }
+        )
+        if (!response.ok) {
+            console.log(response);
+            let { errors } = JSON.parse(response['_bodyInit']);
+            console.log(errors[0]);
+            throw new Error(errors[0]);
+        }
+        return await response.json();
+    }
+
 
 
 
     let isFormValid = false;
-    if (nameInputValid && emailInputValid && passwordInputValid) {
+    if (register && nameInputValid && emailInputValid && passwordInputValid) {
+        isFormValid = true;
+    }
+    else if (!register && emailInputValid && passwordInputValid) {
         isFormValid = true;
     }
 
-    const onFormSubmitHandler = (e) => {
+    let url = (register) ? '/api/auth/signup' : '/api/auth/login';
+
+    const onFormSubmitHandler = async () => {
         if (!isFormValid) {
             if (register && !nameInputValid) {
-                alert('name field is invalid');
+                setNotification('   Name field is invalid !!');
             }
             else if (!emailInputValid) {
-                alert('email field is invalid');
+                setNotification('Email field is invalid !!');
             }
-            else {
-                alert('password is invalid')
+            else if (!passwordInputValid) {
+                setNotification('Password is invalid !!')
             }
+            console.log('#');
             return;
         };
         setNameInputTouched(true);
         setEmailInputTouched(true);
         setPasswordInputTouched(true);
+        try {
+            let response = await getJson(url);
+            console.log(response);
+        }
+
+        catch (err) {
+            setNotification(err.message);
+        }
+
         setEmailInput('');
         setNameInput('');
         setPasswordInput('');
-        setNameInputTouched(true);
-        setEmailInputTouched(true);
-        setPasswordInputTouched(true);
+        setNameInputTouched(false);
+        setEmailInputTouched(false);
+        setPasswordInputTouched(false);
     }
 
 
@@ -102,8 +164,11 @@ function Authentication() {
     return (
         <React.Fragment>
             <div className={styles['auth-page']}>
-                <div className={styles['auth-section']}>
+                <div className={styles['auth-section']} onFocus={setNotificationHandler}>
 
+                    <div className={notificationMsg.length ? styles['notification'] : ''} >
+                        {notificationMsg}
+                    </div>
 
                     <div className={styles['app-logo']} >
                         <svg id={styles['svg']} width="92" height="35" viewBox="0 0 92 35" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +184,7 @@ function Authentication() {
                         {register && <div className={styles['auth-name']}>
                             <label htmlFor='name'> Name </label>
                             <input type='text' name='name'
-                                className={` ${styles['input-field']} ${!nameInputValid && nameInputTouched ? styles['invalidField'] : ''}`} onChange={nameChangeHandler} value={nameInputData} />
+                                className={` ${styles['input-field']} ${!nameInputValid && nameInputTouched ? styles['invalidField'] : ''}`} onChange={nameChangeHandler} onBlur={nameBlurHandler} value={nameInputData} />
                         </div>}
 
 
@@ -134,14 +199,16 @@ function Authentication() {
                             <label htmlFor='password'> Password </label>
                             <input type='password' name='password'
                                 className={`${styles['input-field']} ${!passwordInputValid && passwordInputTouched ? styles['invalidField'] : ''}`}
-                                onChange={passwordChangeHandler} value={passwordInputData} />
+                                onChange={passwordChangeHandler} onBlur={passwordBlurHandler} value={passwordInputData} />
                         </div>
 
                         <div className={styles['auth-btns']}>
-                            <div onClick={onFormSubmitHandler}>
-                                <ButtonPrimary>Submit</ButtonPrimary>
+                            <div onClick={onFormSubmitHandler} className={styles['btn-container']} >
+                                <ButtonPrimary>{register ? 'Register' : 'Login'}</ButtonPrimary>
                             </div>
-                            <ButtonSecondary>Guest User</ButtonSecondary>
+                            <div className={styles['btn-container']} >
+                                <ButtonSecondary>Guest User</ButtonSecondary>
+                            </div>
                         </div>
 
                     </form>

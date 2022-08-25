@@ -1,9 +1,8 @@
 .btn {
     /* width: 3rem; */
-    max-width: 6rem;
+    /* max-width: 6rem; */
     padding: 1rem;
     border-radius: 5px;
-    /* background: #1faee7; */
     background: #328fdb;
     line-height: .3;
     font-size: .9rem;

@@ -23,6 +23,11 @@
     border-top-color: #328fdb;
 }
 
+.notification {
+    color: rgb(191, 55, 55);
+    padding: 1rem 0;
+}
+
 .app-logo {
     margin: .8rem 0;
 }
@@ -91,5 +96,8 @@ label {
 .invalidField {
     border-style: solid;
     border-color: rgb(191, 55, 55);
+}
 
+.btn-container {
+    max-width: 6rem;
 }
