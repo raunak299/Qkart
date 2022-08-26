@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import useAuthFormValidity from '../custom-hooks/auth-hooks';
-import ButtonPrimary from "../ui/ButtonPrimary";
+import ButtonPrimary from '../ui/ButtonPrimary'
 import ButtonSecondary from '../ui/ButtonSecondary';
 import styles from './Authentication.module.css';
-
+import useHTTP from '../custom-hooks/http-hook';
+import Loading from '../ui/Loading';
+import loadingImg from '../../images//loading.svg'
 
 function Authentication() {
 
@@ -13,12 +15,13 @@ function Authentication() {
         setRegister(!register);
     }
 
+    // const [errorMsg, setError] = useState('');
 
-    const [notificationMsg, setNotification] = useState('');
-    const setNotificationHandler = () => {
-        setNotification('');
+    const { errorMsg, isLoading, setError, sendRequest } = useHTTP();
+
+    const setErrorHandler = () => {
+        setError('');
     }
-
 
     const {
         inputFieldData: nameInputData,
@@ -33,7 +36,7 @@ function Authentication() {
         nameInputChangeHandler(e.target.value.trim());
     }
     const nameBlurHandler = () => {
-        !nameInputValid && setNotification('Name field cannot be empty !!');
+        !nameInputValid && setError('Name field cannot be empty !!');
     }
 
 
@@ -51,13 +54,13 @@ function Authentication() {
 
     const emailChangeHandler = (e) => {
         if (!nameInputValid && nameInputTouched) {
-            setNotification('Name field cannot be empty !!');
+            setError('Name field cannot be empty !!');
             return;
         }
         emailInputChangeHandler(e.target.value.trim());
     }
     const emailBlurHandler = () => {
-        !emailInputValid && setNotification('Email should be of format abc@xyz.com !!');
+        !emailInputValid && setError('Email should be of format abc@xyz.com !!');
     }
 
 
@@ -74,41 +77,43 @@ function Authentication() {
 
     const passwordChangeHandler = (e) => {
         if (!emailInputValid && emailInputTouched) {
-            setNotification("Minimum password length should be 8!!")
+            setError("Email should be of format abc@xyz.com !!")
             return;
         }
         passwordInputChangeHandler(e.target.value.trim());
     }
     const passwordBlurHandler = () => {
-        !passwordInputValid && setNotification("Minimum password length should be 8!!")
+        !passwordInputValid && setError("Minimum password length should be 8!!")
     }
 
 
 
 
 
-    const getJson = async (url) => {
-        let response = await fetch(url,
-            {
-                method: 'POST',
-                body: JSON.stringify({
-                    email: emailInputData,
-                    password: passwordInputData,
-                    name: nameInputData
-                }),
-                headers: {
-                    'content-type': 'application/json'
-                }
-            }
-        )
-        if (!response.ok) {
-            console.log(response);
-            let { errors } = JSON.parse(response['_bodyInit']);
-            console.log(errors[0]);
-            throw new Error(errors[0]);
-        }
-        return await response.json();
-    }
+
+
+    // const getJson = async (url) => {
+    //     let response = await fetch(url,
+    //         {
+    //             method: 'POST',
+    //             body: JSON.stringify({
+    //                 email: emailInputData,
+    //                 password: passwordInputData,
+    //                 name: nameInputData
+    //             }),
+    //             headers: {
+    //                 'content-type': 'application/json'
+    //             }
+    //         }
+    //     )
+    //     if (!response.ok) {
+    //         console.log(response);
+    //         let { errors } = JSON.parse(response['_bodyInit']);
+    //         console.log(errors[0]);
+    //         throw new Error(errors[0]);
+    //     }
+    //     return await response.json();
+    // }
 
 
 
@@ -123,16 +128,19 @@ function Authentication() {
 
     let url = (register) ? '/api/auth/signup' : '/api/auth/login';
 
-    const onFormSubmitHandler = async () => {
+    const onFormSubmitHandler = async (events) => {
+        console.log(events);
+        events.preventDefault();
+        setTimeout(() => (console.log('bye')), 10000);
         if (!isFormValid) {
             if (register && !nameInputValid) {
-                setNotification('   Name field is invalid !!');
+                setError('   Name field is invalid !!');
             }
             else if (!emailInputValid) {
-                setNotification('Email field is invalid !!');
+                setError('Email field is invalid !!');
             }
             else if (!passwordInputValid) {
-                setNotification('Password is invalid !!')
+                setError('Password is invalid !!')
             }
             console.log('#');
             return;
@@ -140,14 +148,29 @@ function Authentication() {
         setNameInputTouched(true);
         setEmailInputTouched(true);
         setPasswordInputTouched(true);
-        try {
-            let response = await getJson(url);
-            console.log(response);
-        }
+        // try {
+        //     let response = await getJson(url);
+        //     console.log(response);
+        // }
 
-        catch (err) {
-            setNotification(err.message);
-        }
+        // catch (err) {
+        //     setError(err.message);
+        // }
+
+
+        sendRequest({
+            url,
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: emailInputData,
+                password: passwordInputData,
+                name: nameInputData
+            })
+        }, (data) => (console.log(data))
+        )
 
         setEmailInput('');
         setNameInput('');
@@ -164,10 +187,13 @@ function Authentication() {
     return (
         <React.Fragment>
             <div className={styles['auth-page']}>
-                <div className={styles['auth-section']} onFocus={setNotificationHandler}>
 
-                    <div className={notificationMsg.length ? styles['notification'] : ''} >
-                        {notificationMsg}
+                {isLoading && <Loading> <img src={loadingImg} alt='Loading !!' /> </Loading>}
+
+                {!isLoading && <div className={styles['auth-section']} onFocus={setErrorHandler}>
+
+                    <div className={errorMsg.length ? styles['notification'] : ''} >
+                        {errorMsg}
                     </div>
 
                     <div className={styles['app-logo']} >
@@ -180,7 +206,7 @@ function Authentication() {
                     <div className={styles['auth-section-heading']}>{register ? 'Register' : 'Login'}</div>
 
 
-                    <form action='' className={styles['auth-form']} >
+                    <form action='' className={styles['auth-form']} onSubmit={onFormSubmitHandler}>
                         {register && <div className={styles['auth-name']}>
                             <label htmlFor='name'> Name </label>
                             <input type='text' name='name'
@@ -203,9 +229,12 @@ function Authentication() {
                         </div>
 
                         <div className={styles['auth-btns']}>
-                            <div onClick={onFormSubmitHandler} className={styles['btn-container']} >
-                                <ButtonPrimary>{register ? 'Register' : 'Login'}</ButtonPrimary>
+
+                            <div className={styles['btn-container']}>
+                                <button className={styles['submit-btn']}>
+                                    {register ? 'Register' : 'Login'} </button>
                             </div>
+
                             <div className={styles['btn-container']} >
                                 <ButtonSecondary>Guest User</ButtonSecondary>
                             </div>
@@ -220,7 +249,7 @@ function Authentication() {
                     </div>
 
 
-                </div>
+                </div>}
             </div>
         </React.Fragment >
     );

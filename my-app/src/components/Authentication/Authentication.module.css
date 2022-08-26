@@ -101,3 +101,19 @@ label {
 .btn-container {
     max-width: 6rem;
 }
+
+.submit-btn {
+    width: 8rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border-style: none;
+    background: #328fdb;
+    line-height: .3;
+    font-size: .9rem;
+    color: aliceblue;
+    letter-spacing: .1rem;
+}
+
+.submit-btn:hover {
+    background: #294f71;
+}
