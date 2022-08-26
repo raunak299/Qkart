@@ -12,9 +12,12 @@
 
 }
 
-.navigation-icons i:hover {
+.navigation-icons i:hover,
+.navigation-icons i:active,
+.active i {
     color: #328fdb;
 }
+
 
 .hidden {
     display: none;

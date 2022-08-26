@@ -1,16 +1,24 @@
-import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
-import Authentication from "./components/Authentication/Authentication";
+import { Route, Switch, Redirect } from 'react-router-dom';
+import React from "react";
+import Authentication from './components/Authentication/Authentication';
+
 
 function App() {
   return (
-    <div className="App">
-      {/* <Navbar /> */}
-      {/* <Home /> */}
-      <Authentication />
-
-    </div >
+    <React.Fragment>
+      <Switch>
+        <Route path='/' exact>
+          <Redirect to='/home' />
+        </Route>
+        <Route path='/home' >
+          <Home />
+        </Route>
+        <Route path='/authentication'>
+          <Authentication />
+        </Route>
+      </Switch>
+    </React.Fragment>
   );
 }
 

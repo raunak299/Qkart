@@ -66,9 +66,11 @@
 }
 
 .search-icon-container i {
-    margin-left: 0rem;
+    margin-left: .5rem;
     color: white;
     font-size: .7rem;
+
+
 }
 
 .search-icon-container i:hover {
@@ -120,7 +122,6 @@
 
 
     .search-icon-container i {
-        margin-left: 0rem;
         font-size: .7rem;
     }
 

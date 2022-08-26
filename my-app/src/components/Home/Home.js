@@ -3,10 +3,13 @@ import styles from './Home.module.css';
 import heroImage from '../../images/ecommerce3.png'
 import ButtonPrimary from "../ui/ButtonPrimary";
 import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
+
 
 function Home() {
     return (
         <React.Fragment>
+            <Navbar />
             <div className={styles['home-hero-section']}>
                 <div className={styles['home-hero-info']} >
                     <div className={styles['home-hero-heading']}> Fashion of the Times</div >
