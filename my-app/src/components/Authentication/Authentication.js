@@ -6,12 +6,16 @@ import useHTTP from '../custom-hooks/http-hook';
 import Loading from '../ui/Loading';
 import loadingImg from '../../images//loading.svg';
 import { NavLink } from 'react-router-dom';
+import AuthContext from '../store/auth-context';
+import { useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import Navbar from '../Navbar/Navbar';
 
 
 
 function Authentication() {
 
-    const [register, setRegister] = useState(true);
+    const [register, setRegister] = useState(false);
 
     // const [errorMsg, setError] = useState('');
 
@@ -119,8 +123,6 @@ function Authentication() {
     // }
 
 
-
-
     let isFormValid = false;
     if (register && nameInputValid && emailInputValid && passwordInputValid) {
         isFormValid = true;
@@ -129,7 +131,20 @@ function Authentication() {
         isFormValid = true;
     }
 
+
+
     let url = (register) ? '/api/auth/signup' : '/api/auth/login';
+
+
+    const authContx = useContext(AuthContext);
+    const location = useLocation();
+
+
+    const applyData = (data) => {
+        authContx.setLogin(data.encodedToken);
+        authContx.navigateOnLogin(location.state?.from?.pathname ?? '');
+    }
+
 
     const onFormSubmitHandler = async (events) => {
         events.preventDefault();
@@ -170,7 +185,7 @@ function Authentication() {
                 password: passwordInputData,
                 name: nameInputData
             })
-        }, (data) => (console.log(data))
+        }, applyData
         )
 
         setEmailInput('');
@@ -193,7 +208,7 @@ function Authentication() {
                 email: "johndoe@gmail.com",
                 password: "johnDoe123",
             })
-        }, (data) => (console.log(data))
+        }, applyData
         )
     }
 
@@ -203,6 +218,7 @@ function Authentication() {
 
     return (
         <React.Fragment>
+            <Navbar />
             <div className={styles['auth-page']}>
 
                 {isLoading && <Loading> <img src={loadingImg} alt='Loading !!' /> </Loading>}
@@ -248,7 +264,6 @@ function Authentication() {
                         </div>
 
                         <div className={styles['auth-btns']}>
-
                             <div className={styles['btn-container']}>
                                 <button className={styles['submit-btn']}>
                                     {register ? 'Register' : 'Login'} </button>

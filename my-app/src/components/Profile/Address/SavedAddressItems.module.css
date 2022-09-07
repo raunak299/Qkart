@@ -1,0 +1,15 @@
+.saved-address-items {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #e3eef7;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+.saved-address-items div svg {
+    color: #328fdb;
+    font-size: .8rem;
+    padding-right: 1rem;
+}

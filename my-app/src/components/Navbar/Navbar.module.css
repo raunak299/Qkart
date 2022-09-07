@@ -1,12 +1,14 @@
 .navbar {
-    background: #e3eef7;
-    /* background: #F1F5F8; */
+    background: #eef3fc;
     min-width: 18.75rem;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0px;
     z-index: 100;
     width: 100%;
+    letter-spacing: 1px;
+    /* border-bottom: solid; */
+    /* border-color: #cedbf7 */
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .navbar-center-1 {
@@ -16,7 +18,8 @@
     align-items: center;
     /* background: #F1F5F8; */
     height: 3.3rem;
-    padding: 0rem 2rem;
+    padding: 0rem .5rem;
+
 }
 
 .app-logo {
@@ -47,8 +50,6 @@
     margin-left: .9rem;
     font-size: 1.1rem;
     color: #102a42;
-    ;
-    ;
 }
 
 .search-icon-1:hover {
@@ -108,6 +109,36 @@
     display: none;
 }
 
+.navbar-navigation {
+    display: flex;
+}
+
+.products-page-navigator a {
+    padding: .2rem .4rem;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #102a42;
+    color: #102a42;
+    font-weight: bold;
+    margin-right: .5rem;
+    text-decoration: none;
+}
+
+
+.products-page-navigator a:hover {
+    color: #328fdb;
+    border-color: #328fdb;
+}
+
+@media (min-width: 400px) {
+    .navbar-center-1 {
+        padding: 0rem 2rem;
+    }
+
+    .products-page-navigator a {
+        margin-right: 0;
+    }
+}
 
 @media (min-width: 600px) {
 
@@ -126,63 +157,3 @@
     }
 
 }
-
-/*
-@media (min-width: 800px) {
-
-    .navbar-1 {
-        display: none;
-    }
-
-    .navbar-2 {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-between;
-        align-items: center;
-        background: #F1F5F8;
-        height: 3.5rem;
-        padding: 0rem 2rem;
-        max-width: 64rem;
-        margin: auto;
-    }
-
-    .logo-2 {
-        width: 50px;
-        padding-right: 3rem;
-    }
-
-    .search-bar-2 {
-        padding: .5rem;
-        background: white;
-        border-radius: 15px;
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        width: 55vw;
-    }
-
-
-    .search-bar-2 i {
-        font-size: 1.3rem;
-        color: rgb(43, 42, 42);
-    }
-
-
-    .search-bar-2 i:hover {
-        color: #1890ff
-    }
-
-    .search-input-2 {
-        border-style: none;
-        background: white;
-        height: 18px;
-        width: 100%;
-        padding-left: 1.2rem;
-    }
-
-    .search-input-2:focus {
-        outline: none;
-    }
-
-
-} */

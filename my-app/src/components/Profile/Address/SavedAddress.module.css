@@ -1,0 +1,11 @@
+.saved-address-sec {
+    margin-bottom: 2rem;
+
+}
+
+.saved-address-sec div {
+    padding: .5rem;
+    font-size: 1rem;
+    color: #617d98;
+    font-weight: bold;
+}

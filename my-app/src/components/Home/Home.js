@@ -4,9 +4,11 @@ import heroImage from '../../images/ecommerce3.png'
 import ButtonPrimary from "../ui/ButtonPrimary";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 
 function Home() {
+
     return (
         <React.Fragment>
             <Navbar />
@@ -16,7 +18,11 @@ function Home() {
                     <div className={styles['home-hero-description']}>
                         Designed for the jet-setter in mind, our clothes are ideal blend of comfort and style. Built for the people who’s in demand, this classic design will keep you looking presentable on the go, with a gentle fabric for all-day comfort.
                     </div>
-                    <ButtonPrimary>SHOP NOW</ButtonPrimary>
+                    <div className={styles['shop-now-btn']}>
+                        <Link to='/products'  >
+                            <ButtonPrimary>SHOP NOW</ButtonPrimary>
+                        </Link>
+                    </div>
                 </div>
 
                 <img src={heroImage} alt='logo' className={styles['home-hero-image']}></img>
@@ -29,4 +35,3 @@ function Home() {
 }
 
 export default Home;
-// my - app\src\components\Home\ecommerce2.png

@@ -1,0 +1,44 @@
+.products-page {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+
+
+.products-filter-sec {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    width: 100%;
+    position: relative
+}
+
+.products-section {
+    background: red;
+    height: 200vh;
+    width: 100%;
+}
+
+.footer {
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+
+
+@media(min-width:800px) {
+
+    .products-filter-sec {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+
+}

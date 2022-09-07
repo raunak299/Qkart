@@ -5,30 +5,41 @@
     align-items: center;
 }
 
+
+
 .navigation-icons i {
-    margin-left: .9rem;
+    /* margin-left: .9rem; */
+    margin-right: .5rem;
     font-size: 1.1rem;
     color: #102a42;
-
 }
 
 .navigation-icons i:hover,
 .navigation-icons i:active,
-.active i {
+.navigation-icons a.active i {
     color: #328fdb;
+
 }
+
+
+
 
 
 .hidden {
     display: none;
 }
 
-
+@media(min-width:400px) {
+    .navigation-icons i {
+        margin-left: 1rem;
+        margin-right: 0rem;
+    }
+}
 
 @media (min-width: 600px) {
     .navigation-icons i {
-        margin-left: 1.5rem;
-        color: #102a42;
+        margin-left: 1.2rem;
+        /* color: #102a42; */
         font-size: 1.3rem;
     }
 }

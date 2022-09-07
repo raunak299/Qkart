@@ -1,10 +1,10 @@
 import React from "react";
 import styles from './ButtonPrimary.module.css';
 
-function Button(props) {
+function ButtonPrimary(props) {
     return (
         <div className={styles['btn']}>{props.children}</div>
     );
 }
 
-export default Button;
+export default ButtonPrimary;
