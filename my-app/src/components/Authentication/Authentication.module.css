@@ -61,7 +61,8 @@
     border-style: none;
     background: #e3eef7;
     width: 100%;
-    margin-top: .7rem;
+    margin-top: .5rem;
+    padding-left: .2rem;
 }
 
 .invalidField {
@@ -99,7 +100,7 @@ label {
 }
 
 .btn-container {
-    max-width: 6rem;
+    max-width: 10rem;
 }
 
 .submit-btn {
@@ -112,6 +113,23 @@ label {
     font-size: .9rem;
     color: aliceblue;
     letter-spacing: .1rem;
+}
+
+.guest-user-btn {
+    width: 8rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border-style: none;
+    background: #a9d9fe;
+    color: #102a42;
+    line-height: .3;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+}
+
+.guest-user-btn:hover {
+    background: #294f71;
+    color: white;
 }
 
 .submit-btn:hover {

@@ -6,6 +6,8 @@ import { makeServer } from "./server";
 import { BrowserRouter } from 'react-router-dom';
 import AuthContextProvider from "./components/store/AuthContextProvider";
 import AddressContextProvider from "./components/store/AddressContextProvider";
+import { Provider } from 'react-redux';
+import store from '../src/components/store/index-store'
 
 
 
@@ -17,10 +19,12 @@ makeServer();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <AuthContextProvider>
-      <AddressContextProvider>
-        < App />
-      </AddressContextProvider>
-    </AuthContextProvider>
+    <Provider store={store} >
+      <AuthContextProvider>
+        <AddressContextProvider>
+          < App />
+        </AddressContextProvider>
+      </AuthContextProvider>
+    </Provider>
   </BrowserRouter>
 );

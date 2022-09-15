@@ -3,6 +3,8 @@
     flex-flow: column;
     justify-content: space-between;
     position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
 }
 
 
@@ -12,21 +14,57 @@
     flex-flow: column;
     justify-content: space-between;
     width: 100%;
-    position: relative
+    position: relative;
 }
 
 .products-section {
-    background: red;
-    height: 200vh;
+    /* background: red;
+    height: 200vh; */
+    min-height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
     width: 100%;
+    /* margin-top: 5.6rem; */
+    padding: 6.6rem 1rem 5.6rem 1rem;
 }
+
+.products-section>div {
+    /* width: 280px; */
+    display: flex;
+    color: #294f71;
+    flex-direction: column;
+    justify-content: center;
+    flex-basis: 75%;
+    margin: 1rem .2rem 0rem .2rem;
+    letter-spacing: .1rem;
+}
+
 
 .footer {
     position: absolute;
+    bottom: 3.3rem;
     z-index: 5;
     bottom: 0;
     left: 0;
     width: 100%;
+}
+
+.products-sec-heading {
+    height: 100%;
+    width: 100%;
+    background: rgb(227, 238, 247);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media(min-width:450px) {
+    .products-section>div {
+        flex-basis: 40%;
+
+    }
 }
 
 
@@ -38,7 +76,15 @@
         flex-flow: row;
         justify-content: space-between;
         align-items: flex-start;
+
     }
 
+    .products-section {
+        padding-top: 4.3rem;
+        margin-left: 17rem;
+    }
 
+    .products-section>div {
+        flex-basis: 30%;
+    }
 }

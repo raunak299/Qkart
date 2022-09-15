@@ -9,10 +9,10 @@ export const products = [
   {
     _id: uuid(),
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/81/18/81183e2aa7725b4bac2c5d7e9e8072ecbdd0eee1.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=source[/b9/c3/b9c35ad5296be401e4e21059598f1348545c839f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     category: 'Women',
     size: ['s', 'm', 'l', 'xl'],
-    title: 'High Waist Sports tights',
+    title: 'Oversized Turtleneck Sweater',
     price: '1199',
     rating: '3.9',
     trending: false,
@@ -23,10 +23,10 @@ export const products = [
   {
     _id: uuid(),
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/2c/9c/2c9cfce593e55b63d02404a57f8ebcfb62e46604.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=source[/04/fa/04fa110f9b22492afe5bb255fa2d9192eaa524b1.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     category: 'Women',
     size: ['s', 'm', 'xl'],
-    title: 'Cut-out-detail sports tights',
+    title: 'Tailored-look Belted Dress',
     price: '1499',
     rating: '3.2',
     trending: false,
@@ -37,10 +37,10 @@ export const products = [
   {
     _id: uuid(),
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/67/50/6750460774e889ec6d93a681f82fb70faf86016d.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=source[/6b/a5/6ba5180a26cb095544b29ba6ffadb53bb670be1e.jpg],origin[dam],category[ladies_tops_vests],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
     size: ['s', 'm', 'l'],
     category: 'Women',
-    title: 'High Waist Shaping tights',
+    title: '2-pack Cotton Tank Tops',
     price: '1199',
     rating: '3.1',
     trending: true,
@@ -51,10 +51,10 @@ export const products = [
   {
     _id: uuid(),
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/ef/d6/efd6ab9f12af41848ca2dcaf465d3672bf714a76.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=source[/3b/85/3b85e918578a1d0d4d088079d2fde073c84b2307.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
     category: 'Women',
-    title: 'Cut-out-detail sports tights',
+    title: 'Cable-knit Skirt',
     price: '899',
     rating: '1.9',
     trending: true,
@@ -65,10 +65,10 @@ export const products = [
   {
     _id: uuid(),
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/4d/08/4d08b2704b51a27cba11e64d27b54c1d0d92ecf1.jpg],origin[dam],category[ladies_lingerie_bras_bralettes],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=source[/5e/a5/5ea51f955f90dd40b64c205c30e217181699816c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main",
     size: ['s', 'm', 'l', 'xl'],
     category: 'Women',
-    title: "Light Support Sports bralette",
+    title: "Hooded Sweatshirt Dress",
     price: '999',
     rating: '4.5',
     trending: false,
@@ -79,10 +79,10 @@ export const products = [
   {
     _id: uuid(),
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/35/29/352933e04cdbd226ff56e50cd79a2d915ca66a97.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=source[/78/cb/78cbd0b4d9aca0856861d0eb5adafab62795815f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
     category: 'Women',
-    title: "Sports popover jacket",
+    title: "Cut-out Jersey Dress",
     price: '1499',
     rating: '1.8',
     trending: true,
@@ -93,10 +93,10 @@ export const products = [
   {
     _id: uuid(),
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/e2/83/e28306e7f82abcb31434379da7698d479d13ab2b.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=source[/ad/75/ad75f7a11a9fa4086b99f7f3138715e66a3a7409.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
     category: 'Women',
-    title: 'Seamless sports tight',
+    title: 'Short Twill Skirt',
     price: '399',
     rating: '2.8',
     trending: true,
@@ -121,10 +121,10 @@ export const products = [
   {
     _id: uuid(),
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/1a/19/1a196ab8c98cfc53e48f75f752e55746304eba9c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=source[/a2/78/a278704a2fb95177f97a22397b5d7c284de95d16.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
     category: 'Women',
-    title: "LSports wrap skirt",
+    title: "Belted Shirt Dress",
     price: '1299',
     rating: '4.8',
     trending: true,
@@ -135,10 +135,10 @@ export const products = [
   {
     _id: uuid(),
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/9f/e7/9fe76d26c561554d4678f126eefd47a4d5e738cb.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=source[/8a/9c/8a9cea863b2503095573240b56ddb140c1011ff3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'l', 'xl'],
     category: 'Women',
-    title: "Cropped sports top",
+    title: "Platform Chelsea-style Boots",
     price: '1199',
     rating: '3.8',
     trending: true,

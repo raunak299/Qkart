@@ -8,8 +8,14 @@
     border-radius: 4px;
 }
 
+.saved-address-items div {
+    display: flex;
+    align-items: center;
+}
+
 .saved-address-items div svg {
     color: #328fdb;
-    font-size: .8rem;
+    height: 1.3rem;
+    width: 1.8rem;
     padding-right: 1rem;
 }

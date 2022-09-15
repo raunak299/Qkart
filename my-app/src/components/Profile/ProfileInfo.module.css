@@ -29,7 +29,7 @@
 }
 
 .profile-info-sec div:nth-child(3) {
-    padding-left: 2.3rem;
+    padding-left: 1.5rem;
 }
 
 .profile-info-sec div button:hover {
@@ -39,7 +39,7 @@
 .profile-data {
     color: #617d98;
     display: block;
-    padding-left: 1.8rem;
+    padding-left: 1rem;
 }
 
 

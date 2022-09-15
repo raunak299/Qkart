@@ -44,10 +44,15 @@
     justify-content: center;
 }
 
+.address-form-btn-container div {
+    margin-right: .1rem;
+    margin-left: .1rem;
+}
+
 .address-form-btn {
     margin-top: 1.5rem;
-    width: 5rem;
-    padding-right: .7rem;
+    width: 6rem;
+    /* padding-right: .7rem; */
 }
 
 .address-form-btn button {

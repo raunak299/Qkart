@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import useAuthFormValidity from '../custom-hooks/auth-hooks';
-import ButtonSecondary from '../ui/ButtonSecondary';
+// import ButtonSecondary from '../ui/ButtonSecondary';
 import styles from './Authentication.module.css';
 import useHTTP from '../custom-hooks/http-hook';
 import Loading from '../ui/Loading';
-import loadingImg from '../../images//loading.svg';
+import loadingImg from '../../images//loading2.svg';
 import { NavLink } from 'react-router-dom';
 import AuthContext from '../store/auth-context';
 import { useLocation } from 'react-router-dom';
 import { useContext } from 'react';
-import Navbar from '../Navbar/Navbar';
+// import Navbar from '../Navbar/Navbar';
 
 
 
@@ -17,9 +17,9 @@ function Authentication() {
 
     const [register, setRegister] = useState(false);
 
-    // const [errorMsg, setError] = useState('');
+    const [errorMsg, setError] = useState('');
 
-    const { errorMsg, isLoading, setError, sendRequest } = useHTTP();
+    const { isLoading, sendRequest } = useHTTP();
 
     const setErrorHandler = () => {
         setError('');
@@ -28,6 +28,12 @@ function Authentication() {
     const loginregisterHandler = () => {
         setRegister(!register);
         setErrorHandler();
+        setEmailInput('');
+        setNameInput('');
+        setPasswordInput('');
+        setNameInputTouched(false);
+        setEmailInputTouched(false);
+        setPasswordInputTouched(false);
     }
 
     const {
@@ -218,7 +224,7 @@ function Authentication() {
 
     return (
         <React.Fragment>
-            <Navbar />
+            {/* <Navbar /> */}
             <div className={styles['auth-page']}>
 
                 {isLoading && <Loading> <img src={loadingImg} alt='Loading !!' /> </Loading>}
@@ -270,7 +276,7 @@ function Authentication() {
                             </div>
 
                             <div className={styles['btn-container']} onClick={guestUserHandler}>
-                                <ButtonSecondary>Guest User</ButtonSecondary>
+                                <button className={styles['guest-user-btn']}>Guest User</button>
                             </div>
                         </div>
 

@@ -9,13 +9,14 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 1rem;
 }
 
 
 
 .address-form-trigger img {
     height: 1.7rem;
-    width: 1.7rem;
+    width: 2.3rem;
     padding-right: 1rem;
 }
 
