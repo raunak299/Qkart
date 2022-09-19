@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useCallback } from "react";
+
 
 const useHTTP = () => {
 
-    // const [errorMsg, setError] = useState('');
     const [isLoading, setLoading] = useState(false);
 
 
-    const sendRequest = async (requestConfig, applyData) => {
+    const sendRequest = useCallback(async (requestConfig, applyData) => {
         setLoading(true);
         try {
             let response = await fetch(requestConfig.url,
@@ -22,7 +22,6 @@ const useHTTP = () => {
                 throw new Error(errors[0]);
             }
             let responseData = await response.json();
-            console.log(responseData)
             applyData(responseData);
         }
 
@@ -32,7 +31,7 @@ const useHTTP = () => {
         }
         setTimeout(() => (setLoading(false)), 500);
         // setLoading(false);
-    }
+    }, [])
 
 
     return ({

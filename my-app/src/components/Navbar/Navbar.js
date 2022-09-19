@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navigation from "./Navigation";
 import styles from './Navbar.module.css';
 import { Link, NavLink } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -16,8 +17,9 @@ const Navbar = () => {
     }
 
 
-    const onProductsPage = false;
-
+    const location = useLocation();
+    console.log(location.pathname);
+    const onProductsPage = (location.pathname === '/products');
 
 
     return (

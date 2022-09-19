@@ -24,7 +24,9 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-items: flex-start;
     width: 100%;
+    /* position: relative; */
     /* margin-top: 5.6rem; */
     padding: 6.6rem 1rem 5.6rem 1rem;
 }
@@ -35,11 +37,18 @@
     color: #294f71;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     flex-basis: 75%;
     margin: 1rem .2rem 0rem .2rem;
     letter-spacing: .1rem;
 }
 
+.no-products {
+    font-size: 1.2rem;
+    letter-spacing: .1rem;
+    padding-top: .5rem;
+    color: #677d98;
+}
 
 .footer {
     position: absolute;
@@ -63,7 +72,10 @@
 @media(min-width:450px) {
     .products-section>div {
         flex-basis: 40%;
+    }
 
+    .no-products {
+        font-size: 1.8rem;
     }
 }
 
@@ -84,7 +96,16 @@
         margin-left: 17rem;
     }
 
+    .no-products {
+        flex-basis: 80%;
+    }
+
+
+}
+
+@media(min-width:980px) {
     .products-section>div {
         flex-basis: 30%;
     }
+
 }

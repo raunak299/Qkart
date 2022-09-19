@@ -10,21 +10,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchProduct } from "../store/product-action";
 import Loading from "../ui/Loading";
 import loadingImg from '../../images//loading.svg';
+import useFilter from "../custom-hooks/filter-hooks.js";
+import { productDataActions } from "./../store/Data-Slice";
 
 
 function Products() {
 
     const dispatch = useDispatch();
     const productList = useSelector((state) => state.productData.productList);
+    const featuredProducts = useSelector((state) => state.productData.featuredProducts);
+    const filters = useSelector((state) => state.productData.filter);
 
     const [filterTrigger, setFilterTrigger] = useState(false);
     const { isLoading, sendRequest } = useHTTP();
 
     useEffect(() => {
         dispatch(fetchProduct(sendRequest));
-    }, [dispatch]);
+    }, [dispatch, sendRequest]);
 
-    // console.log(productList);
+    const { filterProducts } = useFilter();
+    useEffect(() => {
+        const newProductList = filterProducts(filters, featuredProducts);
+        dispatch(productDataActions.replaceProductsList({ newProductList }))
+    }, [filters, dispatch, featuredProducts, filterProducts]);
+
 
 
 
@@ -41,8 +50,8 @@ function Products() {
                         <div className={styles['products-sec-loading']}>
                             <Loading> <img src={loadingImg} alt='Loading !!' /> </Loading>
                         </div>}
-
-                    {!isLoading && productList.map((product) => (
+                    {!isLoading && productList.length === 0 && <h3 className={styles['no-products']}>No Products To Display !!</h3>}
+                    {!isLoading && productList.length > 0 && productList.map((product) => (
                         <ProductCard
                             key={product['_id']}
                             img={product.image}

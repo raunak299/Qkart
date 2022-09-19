@@ -39,7 +39,7 @@
 .search-bar-1 {
     padding: .5rem;
     background: white;
-    border-radius: 15px;
+    border-radius: 8px;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -47,9 +47,11 @@
 
 
 .search-icon-1 {
+    padding-right: .6rem;
     margin-left: .9rem;
     font-size: 1.1rem;
     color: #102a42;
+
 }
 
 .search-icon-1:hover {
@@ -93,6 +95,7 @@
     background: white;
     height: 20px;
     width: 100%;
+    padding-top: .5rem;
     padding-left: 1.5rem;
 }
 
@@ -138,6 +141,10 @@
     .products-page-navigator a {
         margin-right: 0;
     }
+
+    .search-icon-1 {
+        padding-right: 0;
+    }
 }
 
 @media (min-width: 600px) {
@@ -149,6 +156,7 @@
     .search-icon-1 {
         margin-left: 1.5rem;
         font-size: 1.3rem;
+        padding-right: 0;
     }
 
 

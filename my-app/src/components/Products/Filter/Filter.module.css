@@ -32,6 +32,9 @@
 
 }
 
+.filter-item-clear:hover {
+    color: rgb(229, 88, 88);
+}
 
 
 .filter-list {
@@ -104,6 +107,8 @@
     margin-left: 1.7rem;
 }
 
+
+
 .radio-input input:checked~.radio-btn-overlay {
     background: #74b4ea;
     /* border-color: #4f687e */
@@ -161,7 +166,7 @@
 
 .price-slider-label {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 13rem;
     padding-top: .2rem;
 
