@@ -9,8 +9,7 @@ import { NavLink } from 'react-router-dom';
 import AuthContext from '../../store/auth-context';
 import { useLocation } from 'react-router-dom';
 import { useContext } from 'react';
-// import axios from 'axios';
-// import Navbar from '../Navbar/Navbar';
+
 
 
 
@@ -209,39 +208,20 @@ function Authentication() {
     const guestUserHandler = async (events) => {
         events.preventDefault();
         console.log("guest");
-        // sendRequest({
-        //     url: '/api/auth/login',
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify({
-        //         email: "johndoe@gmail.com",
-        //         password: "johnDoe123",
-        //     })
-        // }, applyData
-        // )
-
-
-        // const response = await axios.post('/api/auth/login', {
-        //     email: "johndoe@gmail.com",
-        //     password: "johnDoe123",
-        // })
-        // console.log(response.data.encodedToken);
-        // applyData(response);
-
-        const options = {
-            method: 'GET',
+        sendRequest({
+            url: '/api/auth/login',
+            method: 'POST',
             headers: {
-                'X-RapidAPI-Key': 'a6eb7e32f3msh57a4a6f42d0fa31p1d943bjsn6713c4073c3f',
-                'X-RapidAPI-Host': 'apidojo-hm-hennes-mauritz-v1.p.rapidapi.com'
-            }
-        };
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                email: "johndoe@gmail.com",
+                password: "johnDoe123",
+            })
+        }, applyData
+        )
 
-        fetch('https://apidojo-hm-hennes-mauritz-v1.p.rapidapi.com/products/list?country=us&lang=en&currentpage=0&pagesize=30&categories=men_all&concepts=H%26M%20MAN', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
+
 
 
 
