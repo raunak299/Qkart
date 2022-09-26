@@ -209,7 +209,7 @@ function Authentication() {
         events.preventDefault();
         console.log("guest");
         sendRequest({
-            url: 'https://api.netlify.com/api/auth/login',
+            url: '/api/auth/login',
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
