@@ -1,4 +1,4 @@
-import { v4 as uuid } from "uuid";
+
 
 /**
  * Product Database can be added here.
@@ -8,7 +8,7 @@ import { v4 as uuid } from "uuid";
 export const products = [
 
   {
-    _id: uuid(),
+    _id: '1',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/f2/18/f2185ee80f5aa1be0a307ee0b2f74798a28f14ef.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     category: 'men',
@@ -22,7 +22,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '2',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/3b/85/3b85e918578a1d0d4d088079d2fde073c84b2307.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
@@ -36,7 +36,7 @@ export const products = [
     in_stock: false,
   },
   {
-    _id: uuid(),
+    _id: '3',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/60/aa/60aa3430d85015784e00159df4f83655463caf8e.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
@@ -51,7 +51,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '4',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/b9/c3/b9c35ad5296be401e4e21059598f1348545c839f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     category: 'Women',
@@ -65,7 +65,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '5',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/78/cb/78cbd0b4d9aca0856861d0eb5adafab62795815f.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
@@ -80,7 +80,7 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: '6',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/ad/75/ad75f7a11a9fa4086b99f7f3138715e66a3a7409.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
@@ -94,7 +94,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '7',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/5e/a5/5ea51f955f90dd40b64c205c30e217181699816c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main",
     size: ['s', 'm', 'l', 'xl'],
@@ -108,7 +108,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '8',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/26/10/2610647bd33a73b282531dbda3fda931591e3c2a.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
@@ -122,7 +122,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '9',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/a2/78/a278704a2fb95177f97a22397b5d7c284de95d16.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
@@ -136,7 +136,7 @@ export const products = [
     in_stock: false,
   },
   {
-    _id: uuid(),
+    _id: '10',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/8a/9c/8a9cea863b2503095573240b56ddb140c1011ff3.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'l', 'xl'],
@@ -150,7 +150,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '11',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/27/16/27168c044485b19b54519014202acf100e55d196.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
@@ -164,7 +164,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '12',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/79/4a/794afddb032b13021106ec59bb7000e520e1f5a4.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l'],
@@ -178,7 +178,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '13',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/04/fa/04fa110f9b22492afe5bb255fa2d9192eaa524b1.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     category: 'Women',
@@ -192,7 +192,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '14',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/6b/a5/6ba5180a26cb095544b29ba6ffadb53bb670be1e.jpg],origin[dam],category[ladies_tops_vests],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
     size: ['s', 'm', 'l'],
@@ -206,7 +206,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '15',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/49/56/49560dfa45732ed844e8e4742afdca248ee60f9f.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'l', 'xl'],
@@ -221,7 +221,7 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: '16',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/8b/b7/8bb7056167edd6ad90ce5b584190fc1be2f7c837.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
@@ -236,7 +236,7 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: '17',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/16/df/16dfa90713a5a5feafbf865f3ec5ff32cf844841.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
@@ -250,7 +250,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '18',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/40/97/40977e516f8b91079318825df532cc1964566779.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
@@ -264,7 +264,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '19',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/57/ab/57ab9bbb793a799acfab98d6b4cb717f0cc27b18.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['xxl'],
@@ -279,7 +279,7 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: '20',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/b7/6a/b76ac8c60dae22679b69f9f94f1bb94217bb820b.jpg],origin[dam],category[men_tshirtstanks_shortsleeve],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
@@ -293,7 +293,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '21',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/a9/eb/a9ebb33395b09b39b122e1802f8e085cd5bf2ed2.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
@@ -307,7 +307,7 @@ export const products = [
     in_stock: false,
   },
   {
-    _id: uuid(),
+    _id: '22',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/70/61/706176203406264a91657691aff63c1e65ba808d.jpg],origin[dam],category[men_shirts_shortsleeved],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
     size: ['s', 'm', 'l'],
@@ -321,7 +321,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '23',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/b2/5d/b25df154049847b8cc930f44aa5a0e9175cf4a81.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/style]",
     category: 'men',
@@ -336,7 +336,7 @@ export const products = [
   },
 
   {
-    _id: uuid(),
+    _id: '24',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/cc/78/cc783b01c22bb9a1f73293e2ac74c6d4c2727298.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
@@ -350,7 +350,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '25',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/da/d8/dad83bb0763845cc86e8ff7e22bde233f12a7233.jpg],origin[dam],category[men_shoes_sandals_espandrillos],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l'],
@@ -368,7 +368,7 @@ export const products = [
 
 
   {
-    _id: uuid(),
+    _id: '26',
     image:
 
       "https://lp2.hm.com/hmgoepprod?set=source[/32/27/322739698071375d0000cb67494ebfa22de359a2.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
@@ -383,7 +383,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '27',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/76/44/76445217d4a50e14dde63bd3feb5fa8f913c9b9b.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s'],
@@ -397,7 +397,7 @@ export const products = [
     in_stock: false,
   },
   {
-    _id: uuid(),
+    _id: '28',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/19/a6/19a6c3a63ee1de66d7a61a31411c01c56b4b4484.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'l', 'xl'],
@@ -411,7 +411,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '29',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/4d/59/4d59545f4ea37c45b5a59e22d9b82518dd1f2bb0.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],
@@ -425,7 +425,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '30',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/ac/d3/acd350fccf73076117c52c3ccfa717a759ecc7c2.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[2]&call=url[file:/product/main]",
     size: ['s', 'm', 'l'],
@@ -439,7 +439,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '31',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/a8/d4/a8d4ea7fd0522cdd7dff9adf2df2ae79b7a77159.jpg],origin[dam],category[kids_baby_girl_clothing_tops_tshirts],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
     category: 'kids',
@@ -453,7 +453,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '32',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/f9/8a/f98abcbbc3969be32c2acec915a873835c198813.jpg],origin[dam],category[kids_girls_accessories_hairaccessories],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
     category: 'kids',
@@ -470,7 +470,7 @@ export const products = [
 
 
   {
-    _id: uuid(),
+    _id: '33',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/c4/98/c49846bd8439995ddd18c88f6453026dfa1f6e11.jpg],origin[dam],category[kids_boys_clothing_nightwear_pyjamas],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
@@ -484,7 +484,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '34',
     image:
 
       "https://lp2.hm.com/hmgoepprod?set=source[/c9/e0/c9e064c94396c8f4e6754ecce6999e49229ca1ae.jpg],origin[dam],category[kids_baby_boy_setsoutfits],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
@@ -500,7 +500,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '35',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/a5/10/a510cfd3f54a6ef6f08d7b9b4338e82d2567dc03.jpg],origin[dam],category[kids_baby_girl_clothing_bodysuits],type[DESCRIPTIVESTILLLIFE],res[m],hmver[2]&call=url[file:/product/main]",
     size: ['m', 'l', 'xl'],
@@ -514,7 +514,7 @@ export const products = [
     in_stock: true,
   },
   {
-    _id: uuid(),
+    _id: '36',
     image:
       "https://lp2.hm.com/hmgoepprod?set=source[/38/68/386883e16c11d2434906423422627db7ac344b3c.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
     size: ['s', 'm', 'l', 'xl'],

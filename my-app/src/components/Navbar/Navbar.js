@@ -18,7 +18,7 @@ const Navbar = () => {
 
 
     const location = useLocation();
-    console.log(location.pathname);
+    // console.log(location.pathname);
     const onProductsPage = (location.pathname === '/products');
 
 
@@ -35,7 +35,7 @@ const Navbar = () => {
                     </div>
                 </Link>
 
-                {onProductsPage &&
+                {onProductsPage && false &&
                     <div className={`${searchClicked ? styles['search-section-1'] : styles['search-section-closed']} `}>
                         <div className={searchClicked ? styles['search-bar-1'] : ""}>
                             <div className={searchClicked ? styles["search-icon-container"] : ''} >
@@ -47,14 +47,23 @@ const Navbar = () => {
                         {!searchClicked && <Navigation />}
                     </div>}
 
-                {!onProductsPage && <div className={styles['navbar-navigation']} >
+                {/* {!onProductsPage && <div className={styles['navbar-navigation']} >
                     <div className={styles['products-page-navigator']}  >
                         < NavLink to='/products' >
                             Products
                         </NavLink>
                     </div>
                     <Navigation />
-                </div>}
+                </div>} */}
+
+                <div className={styles['navbar-navigation']} >
+                    <div className={styles['products-page-navigator']}  >
+                        < NavLink to='/products' >
+                            Products
+                        </NavLink>
+                    </div>
+                    <Navigation />
+                </div>
 
             </div>
 

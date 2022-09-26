@@ -14,14 +14,18 @@ const useHTTP = () => {
                 {
                     method: requestConfig.method ? requestConfig.method : 'GET',
                     body: requestConfig.body ? requestConfig.body : null,
-                    headers: requestConfig.headers ? requestConfig.headers : ''
+                    headers: requestConfig.headers ? requestConfig.headers : '',
                 }
+
             );
             if (!response.ok) {
                 let { errors } = JSON.parse(response['_bodyInit']);
+                console.log('&');
                 throw new Error(errors[0]);
             }
+
             let responseData = await response.json();
+            // console.log(cd ./responseData)
             applyData(responseData);
         }
 

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { useLocation } from "react-router-dom";
-import AuthContext from "../store/auth-context";
+import AuthContext from "../../store/auth-context";
 import { Redirect } from "react-router-dom";
 
 

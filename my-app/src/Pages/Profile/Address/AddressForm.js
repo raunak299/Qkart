@@ -1,7 +1,8 @@
 import { useContext, useRef } from 'react';
-import AddressContext from '../../store/address-context';
-import ButtonSecondary from '../../ui/ButtonSecondary';
+import AddressContext from '../../../store/address-context';
+import ButtonSecondary from '../../../components/ui/ButtonSecondary';
 import styles from './AddressForm.module.css'
+
 
 
 function AddressForm(props) {

@@ -21,9 +21,18 @@
 
 }
 
+.cartIcon {
+    position: relative;
+}
 
-
-
+.cart-active {
+    position: absolute;
+    top: -.7rem;
+    right: -.2rem;
+    color: #328fdb;
+    font-weight: bold;
+    font-size: .8rem;
+}
 
 .hidden {
     display: none;

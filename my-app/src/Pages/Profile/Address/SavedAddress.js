@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import AddressContext from '../../store/address-context';
+import AddressContext from '../../../store/address-context';
 import styles from './SavedAddress.module.css'
 import SavedAddressItems from './SavedAddressItems';
 

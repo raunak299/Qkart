@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import useAuthFormValidity from '../custom-hooks/auth-hooks';
+import useAuthFormValidity from '../../custom-hooks/auth-hooks';
 // import ButtonSecondary from '../ui/ButtonSecondary';
 import styles from './Authentication.module.css';
-import useHTTP from '../custom-hooks/http-hook';
-import Loading from '../ui/Loading';
-import loadingImg from '../../images//loading2.svg';
+import useHTTP from '../../custom-hooks/http-hook';
+import Loading from '../../components/ui/Loading'
+import loadingImg from '../../images/loading2.svg';
 import { NavLink } from 'react-router-dom';
-import AuthContext from '../store/auth-context';
+import AuthContext from '../../store/auth-context';
 import { useLocation } from 'react-router-dom';
 import { useContext } from 'react';
 // import Navbar from '../Navbar/Navbar';
@@ -154,6 +154,7 @@ function Authentication() {
 
     const onFormSubmitHandler = async (events) => {
         events.preventDefault();
+        console.log('not guest');
         if (!isFormValid) {
             if (register && !nameInputValid) {
                 setError('   Name field is invalid !!');
@@ -167,6 +168,7 @@ function Authentication() {
             console.log('#');
             return;
         };
+
         setNameInputTouched(true);
         setEmailInputTouched(true);
         setPasswordInputTouched(true);
@@ -203,7 +205,9 @@ function Authentication() {
     }
 
 
-    const guestUserHandler = () => {
+    const guestUserHandler = (events) => {
+        events.preventDefault();
+        console.log("guest");
         sendRequest({
             url: '/api/auth/login',
             method: 'POST',
@@ -264,7 +268,7 @@ function Authentication() {
 
                         <div className={styles['auth-password']}>
                             <label htmlFor='password'> Password </label>
-                            <input type='password' name='password'
+                            <input type='password' name='password' autoComplete='on'
                                 className={`${styles['input-field']} ${!passwordInputValid && passwordInputTouched ? styles['invalidField'] : ''}`}
                                 onChange={passwordChangeHandler} onBlur={passwordBlurHandler} value={passwordInputData} />
                         </div>

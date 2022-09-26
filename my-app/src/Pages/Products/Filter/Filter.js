@@ -3,8 +3,9 @@ import styles from './Filter.module.css'
 import checkbox from '../../../images/checkbox.png'
 import filterImg from '../../../images/filter.png';
 import { useDispatch } from 'react-redux';
-import { productDataActions } from '../../store/Data-Slice';
+import { productDataActions } from '../../../store/Data-Slice';
 import { useSelector } from 'react-redux';
+
 
 
 

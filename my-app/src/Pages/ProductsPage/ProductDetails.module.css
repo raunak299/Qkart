@@ -1,0 +1,163 @@
+.product-details-page {
+    min-height: 100vh;
+    /* width: 100vw; */
+}
+
+.product-details-sec {
+    padding-top: 5.5rem;
+    letter-spacing: .2rem;
+    color: #102a42;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5rem;
+
+
+}
+
+.product-img {
+    width: 80%;
+    /* height: 50vh; */
+    padding-bottom: 1rem;
+}
+
+
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 80%;
+    padding: 0 1rem;
+}
+
+.product-info div {
+    /* padding-top: 1.5rem; */
+}
+
+.product-title {
+    /* padding-top: .5rem; */
+    font-size: 1.5rem;
+}
+
+.product-price {
+    /* padding-top: .2rem; */
+    width: 100%;
+}
+
+.product-rating {
+    padding-top: .3rem;
+    width: 100%;
+}
+
+.product-details-info {
+    text-align: left;
+    padding-top: 1.5rem;
+    letter-spacing: .1rem;
+}
+
+.product-rating i {
+    color: #328fdb;
+
+}
+
+.product-size {
+    padding-top: 1.5rem;
+    width: 100%;
+}
+
+.product-size select {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-weight: 1rem;
+    width: 150px;
+    height: 40px;
+    padding-top: .6rem;
+    padding-left: .5rem;
+    border-color: #328fdb;
+    border-width: .1rem;
+    border-radius: 3px;
+    margin-top: .2rem;
+    width: 100%;
+    min-width: 7.8rem;
+}
+
+.product-size select:focus {
+    outline: none;
+}
+
+.product-size select option {
+    padding: 1.5rem;
+}
+
+.add-to-cart-btn {
+    padding-top: 1.5rem;
+}
+
+
+
+.loading-sec {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-sec-img {
+    height: 50vh;
+    width: 50vh;
+}
+
+.no-product-msg {
+    padding-top: 6rem;
+    padding-left: 2rem;
+    color: #677d98;
+}
+
+
+
+
+@media(min-width:450px) {
+    .product-img {
+        width: 60%;
+    }
+
+    .product-info {
+        width: 60%;
+    }
+
+    .product-title {
+        font-size: 2rem;
+    }
+}
+
+
+
+@media(min-width:680px) {
+    .product-details-sec {
+        flex-flow: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .product-img {
+        width: 21.8rem;
+        padding-left: 2rem;
+        height: 28.125rem;
+
+    }
+
+    .product-info {
+        padding: 0 4rem 0 3rem;
+        /* width: 40%; */
+    }
+
+    .product-size select {
+        width: 40%;
+    }
+}

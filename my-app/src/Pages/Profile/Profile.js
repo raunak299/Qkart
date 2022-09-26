@@ -1,13 +1,17 @@
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
+import Footer from "../../components/Footer/Footer";
 import React, { useState } from "react";
 import ProfileInfo from "./ProfileInfo";
 import Address from "./Address/Address";
 import styles from './Profile.module.css'
-
+import { useEffect } from "react";
 
 
 function Profile() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     const [toggle, setToggle] = useState(true);
     const toggleHandler = () => {

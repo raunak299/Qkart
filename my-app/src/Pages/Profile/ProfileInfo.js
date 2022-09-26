@@ -1,5 +1,5 @@
 import styles from './ProfileInfo.module.css';
-import AuthContext from '../store/auth-context';
+import AuthContext from '../../store/auth-context';
 import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 

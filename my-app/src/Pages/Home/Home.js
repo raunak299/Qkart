@@ -1,13 +1,19 @@
 import React from "react";
 import styles from './Home.module.css';
 import heroImage from '../../images/ecommerce3.png'
-import ButtonPrimary from "../ui/ButtonPrimary";
-import Footer from "../Footer/Footer";
-import Navbar from "../Navbar/Navbar";
+import ButtonPrimary from "../../components/ui/ButtonPrimary";
+import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 
 
 function Home() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     return (
         <React.Fragment>
