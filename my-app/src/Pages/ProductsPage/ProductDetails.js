@@ -1,6 +1,6 @@
 import styles from './ProductDetails.module.css'
 import ButtonPrimary from '../../components/ui/ButtonPrimary';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams, useLocation } from 'react-router-dom';
 import React, { useContext, useEffect, useState } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
 import Footer from '../../components/Footer/Footer';
@@ -9,6 +9,7 @@ import loadingImg from '../../images//loading.svg';
 import Loading from "../../components/ui/Loading";
 import AuthContext from '../../store/auth-context';
 import CartContext from '../../store/cart-context';
+
 
 
 let productData = '';
@@ -42,8 +43,11 @@ function ProductDetails() {
     // const product = { quantity: 1 };
     const { replaceCartProductList, cartProductList, changeQuantityHandler } = useContext(CartContext);
     const { token } = useContext(AuthContext);
+    const history = useHistory();
+    const location = useLocation();
     console.log(token);
     const addToCartHandler = () => {
+        !token && history.push("/authentication", { from: location });
         const alreadyExists = cartProductList.find((product) => (product['_id'] === productId && product['sizeToBuy'] === size));
         // console.log(alreadyExists);
         alreadyExists && changeQuantityHandler(productId, '+');
