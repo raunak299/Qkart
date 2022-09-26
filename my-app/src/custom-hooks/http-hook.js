@@ -21,7 +21,10 @@ const useHTTP = () => {
             if (!response.ok) {
                 let { errors } = JSON.parse(response['_bodyInit']);
                 console.log('&');
+                console.log(response);
                 throw new Error(errors[0]);
+
+
             }
 
             let responseData = await response.json();
