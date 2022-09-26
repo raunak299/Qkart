@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 import AuthContext from '../../store/auth-context';
 import { useLocation } from 'react-router-dom';
 import { useContext } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 // import Navbar from '../Navbar/Navbar';
 
 
