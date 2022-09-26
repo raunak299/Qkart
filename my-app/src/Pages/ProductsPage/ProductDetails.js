@@ -42,6 +42,7 @@ function ProductDetails() {
     // const product = { quantity: 1 };
     const { replaceCartProductList, cartProductList, changeQuantityHandler } = useContext(CartContext);
     const { token } = useContext(AuthContext);
+    console.log(token);
     const addToCartHandler = () => {
         const alreadyExists = cartProductList.find((product) => (product['_id'] === productId && product['sizeToBuy'] === size));
         // console.log(alreadyExists);
