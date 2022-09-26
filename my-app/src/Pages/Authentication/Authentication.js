@@ -14,7 +14,6 @@ import { useContext } from 'react';
 
 
 function Authentication() {
-
     const [register, setRegister] = useState(false);
 
     const [errorMsg, setError] = useState('');

@@ -38,9 +38,9 @@ function App() {
 
 
         <Route path='/products' exact>
-          <PrivateRoute>
-            <Products />
-          </PrivateRoute>
+          {/* <PrivateRoute> */}
+          <Products />
+          {/* </PrivateRoute> */}
         </Route>
 
         <Route path='/product-details/:productId' exact>
