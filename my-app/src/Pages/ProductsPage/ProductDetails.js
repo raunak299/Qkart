@@ -45,7 +45,7 @@ function ProductDetails() {
     const { token } = useContext(AuthContext);
     const history = useHistory();
     const location = useLocation();
-    console.log(token);
+    // console.log(token);
     const addToCartHandler = () => {
         !token && history.push("/authentication", { from: location });
         const alreadyExists = cartProductList.find((product) => (product['_id'] === productId && product['sizeToBuy'] === size));
