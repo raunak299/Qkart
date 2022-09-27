@@ -144,9 +144,9 @@ function Authentication() {
     const authContx = useContext(AuthContext);
     const location = useLocation();
 
-
     const applyData = (data) => {
-        authContx.setLogin(data.encodedToken);
+        register && authContx.setLogin({ token: data.encodedToken, name: `${data.createdUser.name}`, email: data.createdUser.email });
+        !register && authContx.setLogin({ token: data.encodedToken, name: `${data.foundUser.name}`, email: data.foundUser.email });
         authContx.navigateOnLogin(location.state?.from?.pathname ?? '');
     }
 

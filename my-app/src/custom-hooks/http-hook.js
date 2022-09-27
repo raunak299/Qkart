@@ -23,12 +23,10 @@ const useHTTP = () => {
                 console.log('&');
                 console.log(response);
                 throw new Error(errors[0]);
-
-
             }
 
             let responseData = await response.json();
-            // console.log(cd ./responseData)
+            // console.log(responseData);
             applyData(responseData);
         }
 

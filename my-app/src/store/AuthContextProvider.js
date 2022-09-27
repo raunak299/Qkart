@@ -6,17 +6,31 @@ function AuthContextProvider(props) {
 
 
     const [token, setToken] = useState(localStorage.getItem('token'));
+    const [userName, setUserName] = useState("");
+    const [userEmail, setUserEmail] = useState("");
 
     const isLoggedIN = !!localStorage.getItem('token');
 
-    const loginHandler = (token) => {
+    const loginHandler = (data) => {
+        const { token, name, email } = data;
+        // console.log(data);
         setToken(token);
+        setUserName(name);
+        setUserEmail(email);
         localStorage.setItem('token', token);
+        localStorage.setItem('userName', name);
+        localStorage.setItem('userEmail', email);
+
     }
+
 
     const logoutHandler = () => {
         setToken(null);
+        setUserName();
+        setUserEmail();
         localStorage.removeItem('token');
+        localStorage.removeItem('userName');
+        localStorage.removeItem('userEmail');
     }
 
     const history = useHistory();
@@ -27,6 +41,8 @@ function AuthContextProvider(props) {
     const currValue = {
         token,
         login: isLoggedIN,
+        userName,
+        userEmail,
         setLogin: loginHandler,
         setLogout: logoutHandler,
         navigateOnLogin: navigateOnLoginHandler
