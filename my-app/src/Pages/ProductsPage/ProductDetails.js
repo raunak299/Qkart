@@ -9,20 +9,28 @@ import loadingImg from '../../images//loading.svg';
 import Loading from "../../components/ui/Loading";
 import AuthContext from '../../store/auth-context';
 import CartContext from '../../store/cart-context';
+import { useDispatch, useSelector } from 'react-redux';
+import { addProductToWishList, removeProductFromWishlist } from '../../store/wishlist-action';
 
 
 
 let productData = '';
 function ProductDetails() {
 
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
+    let [isLoading, setLoading] = useState(true);
+    setTimeout(() => {
+        setLoading(false);
+    }, 1000);
+
     const params = useParams();
     const productId = params.productId;
 
-    const { isLoading, sendRequest } = useHTTP();
+    const { sendRequest } = useHTTP();
     useEffect(() => {
         sendRequest({
             url: `/api/products/${productId}`
@@ -66,6 +74,17 @@ function ProductDetails() {
     }
 
 
+    const dispatch = useDispatch();
+    const { wishListProductsId } = useSelector((state) => (state.wishListData));
+    const addWishlistHandler = () => {
+        !token && history.push("/authentication", { from: location });
+        dispatch(addProductToWishList(sendRequest, productId, token));
+    }
+    const removeWishlistHandler = () => {
+        dispatch(removeProductFromWishlist(sendRequest, productId, token));
+    }
+
+
 
     return (
         <React.Fragment>
@@ -80,6 +99,8 @@ function ProductDetails() {
                 {!isLoading && !noProduct && <div className={styles['product-details-sec']}>
                     <img src={productData.image} className={styles['product-img']} alt='product-img' />
                     <div className={styles['product-info']}>
+                        {wishListProductsId.includes(productId) && <img src='https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-heart-miscellaneous-kiranshastry-lineal-color-kiranshastry.png' className={styles['wishlist']} alt='wishlist' onClick={removeWishlistHandler} />}
+                        {!wishListProductsId.includes(productId) && <img src="https://img.icons8.com/ultraviolet/40/000000/like--v1.png" alt='wishlist' className={styles['wishlist']} onClick={addWishlistHandler} />}
                         <h1 className={styles['product-title']}>{productData.title}</h1>
                         <h3 className={styles['product-price']}>{`Rs.${productData.price}`}</h3>
                         <h4 className={styles['product-rating']}>{productData.rating}<i className="fa fa-solid fa-star"></i>  </h4>

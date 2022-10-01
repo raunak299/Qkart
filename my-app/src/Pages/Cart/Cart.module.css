@@ -149,6 +149,8 @@
     color: #677d98;
 }
 
+
+
 @media(min-width:700px) {
     .cart-section {
         flex-flow: row;

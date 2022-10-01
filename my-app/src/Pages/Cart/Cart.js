@@ -68,7 +68,9 @@ function Cart() {
                     <div className={styles['cart-product-list']}>
                         {cartProductList.map((product) => (
                             <div className={styles['cart-product']} key={`${product['_id']}&${product['sizeToBuy']}`}>
-                                <Link to={`product-details/${product['_id']}`}> <img src={product.image} alt="img" /> </Link>
+                                <Link to={`product-details/${product['_id']}`}>
+                                    <img src={product.image} alt="img" />
+                                </Link>
                                 <div className={styles['product-detail']}>
                                     <div>{product.title}</div>
                                     <div>Price: <span>{product.price}</span></div>
@@ -83,6 +85,7 @@ function Cart() {
                                     <button value={product['_id']} onClick={deleteHandler} className={styles['delete-product']}>
                                         Delete
                                     </button>
+
                                 </div>
                             </div>))}
 

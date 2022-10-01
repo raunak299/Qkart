@@ -1,5 +1,25 @@
+.product-card-sec {
+    position: relative;
+}
+
 .product-card-container {
     text-decoration: none;
+}
+
+
+
+
+
+
+.wishlist {
+    height: 1.7rem;
+    width: 1.7rem;
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+    z-index: 2;
+    color: #102a42;
+
 }
 
 .product-card-img {

@@ -8,6 +8,7 @@ import Profile from "../src/Pages/Profile/Profile";
 import ProductDetails from "./Pages/ProductsPage/ProductDetails";
 import Cart from "./Pages/Cart/Cart";
 import OrderPlaced from "./Pages/OrderPlaced/OrderPlaced";
+import Wishlist from "./Pages/Wishlist/WishList";
 
 
 
@@ -55,6 +56,12 @@ function App() {
 
         <Route path='/orderPlaced'>
           <OrderPlaced />
+        </Route>
+
+        <Route path='/wishlist'>
+          <PrivateRoute>
+            <Wishlist />
+          </PrivateRoute>
         </Route>
 
 

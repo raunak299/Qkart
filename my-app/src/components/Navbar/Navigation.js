@@ -19,7 +19,9 @@ const Navigation = () => {
             {login && <NavLink activeClassName={styles.active} to='/profile' >
                 <i className="fa fa-solid fa-circle-user"></i>
             </NavLink>}
-            {/* <i className="fa fa-solid fa-heart" ></i> */}
+            {login && <NavLink to='/wishlist'>
+                <i className="fa fa-solid fa-heart" ></i>
+            </NavLink>}
             {login && <NavLink activeClassName={styles.active} to='/cart' >
                 <div className={styles['cartIcon']} >
                     <i className=" fa fa-solid fa-cart-shopping" >

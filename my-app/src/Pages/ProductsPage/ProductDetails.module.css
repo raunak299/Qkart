@@ -31,6 +31,7 @@
     align-items: flex-start;
     width: 80%;
     padding: 0 1rem;
+    position: relative;
 }
 
 .product-info div {
@@ -117,6 +118,17 @@
     padding-top: 6rem;
     padding-left: 2rem;
     color: #677d98;
+}
+
+.wishlist {
+    height: 1.7rem;
+    width: 1.7rem;
+    position: absolute;
+    color: #102a42;
+    right: .5rem;
+    top: .5rem;
+    z-index: 1;
+    margin-right: 1.5rem;
 }
 
 
