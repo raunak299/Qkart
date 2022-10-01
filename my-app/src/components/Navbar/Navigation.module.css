@@ -23,17 +23,18 @@
 
 .icon-container {
     position: relative;
+
 }
 
 .icon-active {
     position: absolute;
-    top: -.8rem;
-    right: -.4rem;
     color: white;
     font-weight: bold;
-    width: 1rem;
-    height: 1rem;
-    font-size: .6rem;
+    top: -.5rem;
+    right: 0rem;
+    width: .8rem;
+    height: .8rem;
+    font-size: .5rem;
     border-radius: 20px;
     background-color: #328fdb;
     display: flex;
@@ -49,6 +50,14 @@
     .navigation-icons i {
         margin-left: 1rem;
         margin-right: 0rem;
+    }
+
+    .icon-active {
+        top: -.7rem;
+        right: -.3rem;
+        width: 1rem;
+        height: 1rem;
+        font-size: .6rem;
     }
 }
 
