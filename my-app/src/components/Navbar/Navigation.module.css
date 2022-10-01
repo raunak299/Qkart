@@ -21,17 +21,24 @@
 
 }
 
-.cartIcon {
+.icon-container {
     position: relative;
 }
 
-.cart-active {
+.icon-active {
     position: absolute;
-    top: -.7rem;
-    right: -.2rem;
-    color: #328fdb;
+    top: -.8rem;
+    right: -.4rem;
+    color: white;
     font-weight: bold;
-    font-size: .8rem;
+    width: 1rem;
+    height: 1rem;
+    font-size: .6rem;
+    border-radius: 20px;
+    background-color: #328fdb;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
 
 .hidden {

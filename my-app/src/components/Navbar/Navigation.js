@@ -3,6 +3,8 @@ import styles from './Navigation.module.css';
 import { NavLink } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import CartContext from "../../store/cart-context";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const Navigation = () => {
@@ -10,6 +12,7 @@ const Navigation = () => {
     const authContx = useContext(AuthContext);
     const login = authContx.login;
     const { cartProductList } = useContext(CartContext);
+    const { wishListProductsId } = useSelector((state) => (state.wishListData));
 
     return (
         <div className={styles['navigation-icons']} >
@@ -20,15 +23,23 @@ const Navigation = () => {
                 <i className="fa fa-solid fa-circle-user"></i>
             </NavLink>}
             {login && <NavLink to='/wishlist'>
-                <i className="fa fa-solid fa-heart" ></i>
-            </NavLink>}
-            {login && <NavLink activeClassName={styles.active} to='/cart' >
-                <div className={styles['cartIcon']} >
-                    <i className=" fa fa-solid fa-cart-shopping" >
-                        <div className={styles['cart-active']}>{cartProductList.length > 0 ? cartProductList.length : ''}</div>
+                <div className={styles['icon-container']} >
+                    <i className="fa fa-solid fa-heart" >
+                        <div className={styles['icon-active']}>
+                            <div>{wishListProductsId.length > 0 ? wishListProductsId.length : ''}</div>
+                        </div>
                     </i>
                 </div>
             </NavLink>}
+            {login && <Link to='/cart' >
+                <div className={styles['icon-container']} >
+                    <i className=" fa fa-solid fa-cart-shopping" >
+                        <div className={styles['icon-active']}>
+                            <div>{cartProductList.length > 0 ? cartProductList.length : ''}</div>
+                        </div>
+                    </i>
+                </div>
+            </Link>}
         </div >
     );
 }
