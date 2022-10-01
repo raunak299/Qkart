@@ -25,18 +25,18 @@ const Navigation = () => {
             {login && <NavLink to='/wishlist'>
                 <div className={styles['icon-container']} >
                     <i className="fa fa-solid fa-heart" >
-                        <div className={styles['icon-active']}>
-                            <div>{wishListProductsId.length > 0 ? wishListProductsId.length : ''}</div>
-                        </div>
+                        {wishListProductsId.length > 0 && <div className={styles['icon-active']}>
+                            <div>{wishListProductsId.length}</div>
+                        </div>}
                     </i>
                 </div>
             </NavLink>}
             {login && <Link to='/cart' >
                 <div className={styles['icon-container']} >
                     <i className=" fa fa-solid fa-cart-shopping" >
-                        <div className={styles['icon-active']}>
+                        {cartProductList.length > 0 && <div className={styles['icon-active']}>
                             <div>{cartProductList.length > 0 ? cartProductList.length : ''}</div>
-                        </div>
+                        </div>}
                     </i>
                 </div>
             </Link>}
