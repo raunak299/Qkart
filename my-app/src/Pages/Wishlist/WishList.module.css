@@ -42,6 +42,14 @@
     position: fixed;
     width: 100%;
     bottom: 0;
+    z-index: 200;
+}
+
+
+
+.loading-sec-img {
+    width: 50vw;
+    height: 50vh;
 }
 
 

@@ -9,8 +9,8 @@
 
 .navigation-icons i {
     /* margin-left: .9rem; */
-    margin-right: .5rem;
-    font-size: 1.1rem;
+    margin-right: .7rem;
+    font-size: 1.2rem;
     color: #102a42;
 }
 
@@ -31,7 +31,7 @@
     color: white;
     font-weight: bold;
     top: -.5rem;
-    right: 0rem;
+    right: .2rem;
     width: .8rem;
     height: .8rem;
     font-size: .5rem;
