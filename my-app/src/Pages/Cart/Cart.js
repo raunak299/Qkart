@@ -8,6 +8,8 @@ import useHTTP from '../../custom-hooks/http-hook';
 import AuthContext from '../../store/auth-context';
 import CartContext from '../../store/cart-context';
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // import ButtonSecondary from '../../components/ui/ButtonSecondary';
 
@@ -45,6 +47,9 @@ function Cart() {
     const deleteHandler = (e) => {
         const id = e.target.value;
         deleteCartHandler(id);
+        toast.success('Product Deleted !!', {
+            position: toast.POSITION.TOP_RIGHT
+        });
     }
 
     const [totalPrice, setTotalPrice] = useState(0);
@@ -85,7 +90,7 @@ function Cart() {
                                     <button value={product['_id']} onClick={deleteHandler} className={styles['delete-product']}>
                                         Delete
                                     </button>
-
+                                    {/* <ToastContainer /> */}
                                 </div>
                             </div>))}
 
@@ -115,6 +120,7 @@ function Cart() {
                     </div>
                 </div>}
             </div >
+            <ToastContainer />
             <div className={styles['footer']}>
                 <Footer />
             </div>

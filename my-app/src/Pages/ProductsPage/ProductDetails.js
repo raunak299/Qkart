@@ -11,7 +11,8 @@ import AuthContext from '../../store/auth-context';
 import CartContext from '../../store/cart-context';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProductToWishList, removeProductFromWishlist } from '../../store/wishlist-action';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 let productData = '';
@@ -69,7 +70,13 @@ function ProductDetails() {
             body: JSON.stringify({
                 product: { ...productData, sizeToBuy: size }
             })
-        }, (data) => (replaceCartProductList(data.cart)))
+        }, (data) => {
+            replaceCartProductList(data.cart);
+            toast.success('Product Added to Cart !!', {
+                position: toast.POSITION.TOP_RIGHT
+            });
+
+        })
 
     }
 
@@ -120,6 +127,7 @@ function ProductDetails() {
                                 <ButtonPrimary >Add To Cart</ButtonPrimary>
                             </div>
                         </div>
+                        <ToastContainer />
                     </div>
                 </div>}
             </div>

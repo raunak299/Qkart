@@ -21,7 +21,10 @@ function Wishlist() {
             headers: {
                 authorization: token
             }
-        }, (data) => (setWishlistProducts(data.wishlist)));
+        }, (data) => {
+            setWishlistProducts(data.wishlist);
+
+        });
     }, [wishListProductsId, sendRequest, token])
 
 
