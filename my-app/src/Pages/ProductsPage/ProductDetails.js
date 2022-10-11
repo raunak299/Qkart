@@ -73,7 +73,7 @@ function ProductDetails() {
         }, (data) => {
             replaceCartProductList(data.cart);
             toast.success('Product Added to Cart !!', {
-                position: toast.POSITION.TOP_RIGHT
+                position: toast.POSITION.BOTTOM_RIGHT
             });
 
         })
@@ -86,9 +86,15 @@ function ProductDetails() {
     const addWishlistHandler = () => {
         !token && history.push("/authentication", { from: location });
         dispatch(addProductToWishList(sendRequest, productId, token));
+        toast.success('Product Wislisted !!', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        });
     }
     const removeWishlistHandler = () => {
         dispatch(removeProductFromWishlist(sendRequest, productId, token));
+        toast.success('Product Not Wishlisted !!', {
+            position: toast.POSITION.BOTTOM_RIGHT
+        });
     }
 
 

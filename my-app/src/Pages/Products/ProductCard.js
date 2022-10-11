@@ -26,13 +26,13 @@ function ProductCard(props) {
         !token && history.push("/authentication", { from: location });
         dispatch(addProductToWishList(sendRequest, props.id, token));
         toast.success('Product Wishlisted !!', {
-            position: toast.POSITION.TOP_RIGHT
+            position: toast.POSITION.BOTTOM_RIGHT
         });
     }
     const removeWishlistHandler = () => {
         dispatch(removeProductFromWishlist(sendRequest, props.id, token));
         toast.success('Product Not Wishlisted !!', {
-            position: toast.POSITION.TOP_RIGHT
+            position: toast.POSITION.BOTTOM_RIGHT
         });
     }
 

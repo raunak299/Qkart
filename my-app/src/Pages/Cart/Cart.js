@@ -48,7 +48,7 @@ function Cart() {
         const id = e.target.value;
         deleteCartHandler(id);
         toast.success('Product Deleted !!', {
-            position: toast.POSITION.TOP_RIGHT
+            position: toast.POSITION.BOTTOM_RIGHT
         });
     }
 
