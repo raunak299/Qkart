@@ -10,7 +10,7 @@ export const products = [
   {
     _id: '1',
     image:
-      "https://lp2.hm.com/hmgoepprod?set=source[/f2/18/f2185ee80f5aa1be0a307ee0b2f74798a28f14ef.jpg],origin[dam],category[],type[LOOKBOOK],res[m],hmver[1]&call=url[file:/product/main]",
+      "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2Fc4%2F58%2Fc4583e5b8e7a670e78570ab67bba3a0d6dfc8d68.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5B%5D%2Ctype%5BLOOKBOOK%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]",
     category: 'men',
     size: ['s', 'm', 'xl'],
     title: "Relaxed Fit Sweatshirt",
