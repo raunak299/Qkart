@@ -113,7 +113,10 @@ function Cart() {
                             <div>{`Rs ${totalPrice}`}</div>
                         </div>
                         <div>
-                            <Link to='/orderPlaced' className={styles['checkout-btn']}>
+                            {/* <Link to='/orderPlaced' className={styles['checkout-btn']}>
+                                <ButtonPrimary>CHECKOUT</ButtonPrimary>
+                            </Link> */}
+                              <Link to='/shipping' className={styles['checkout-btn']}>
                                 <ButtonPrimary>CHECKOUT</ButtonPrimary>
                             </Link>
                         </div>

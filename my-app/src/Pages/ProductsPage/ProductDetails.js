@@ -41,26 +41,28 @@ function ProductDetails() {
 
     const noProduct = (productData === null || productData.length === 0);
 
-    const { size: availableSizes } = productData;
+    const { size } = productData;
+    
 
-    const [size, setSize] = useState('s');
-    const selectSizeHandler = (e) => {
-        const temp = e.target.value;
-        setSize(temp);
-    }
+    // const [size, setSize] = useState('s');
+    // const selectSizeHandler = (e) => {
+    //     const temp = e.target.value;
+    //     setSize(temp);
+    // }
 
     // const product = { quantity: 1 };
-    const { replaceCartProductList, cartProductList, changeQuantityHandler } = useContext(CartContext);
+    const { replaceCartProductList } = useContext(CartContext);
+    const [productAdded, setProductAdded] = useState(false);
     const { token } = useContext(AuthContext);
     const history = useHistory();
     const location = useLocation();
     // console.log(token);
     const addToCartHandler = () => {
         !token && history.push("/authentication", { from: location });
-        const alreadyExists = cartProductList.find((product) => (product['_id'] === productId && product['sizeToBuy'] === size));
-        // console.log(alreadyExists);
-        alreadyExists && changeQuantityHandler(productId, '+');
-        !alreadyExists && sendRequest({
+        // const alreadyExists = cartProductList.find((product) => (product['_id'] === productId && product['sizeToBuy'] === size));
+        // // console.log(alreadyExists);
+        // alreadyExists && changeQuantityHandler(productId, '+');
+         sendRequest({
             url: '/api/user/cart',
             method: 'POST',
             headers: {
@@ -72,12 +74,18 @@ function ProductDetails() {
             })
         }, (data) => {
             replaceCartProductList(data.cart);
+            setProductAdded(true);
             toast.success('Product Added to Cart !!', {
                 position: toast.POSITION.BOTTOM_RIGHT
             });
 
         })
 
+    }
+
+
+    const goToCartHandler = ()=>{
+        history.push('/cart');
     }
 
 
@@ -117,22 +125,28 @@ function ProductDetails() {
                         <h1 className={styles['product-title']}>{productData.title}</h1>
                         <h3 className={styles['product-price']}>{`Rs.${productData.price}`}</h3>
                         <h4 className={styles['product-rating']}>{productData.rating}<i className="fa fa-solid fa-star"></i>  </h4>
+                        <h4 className={styles['product-rating']}>{`size : ${size}`}  </h4>
                         <div className={styles['product-details-info']}>
                             Designed for the jet-setter in mind, our clothes are ideal blend of comfort and style. Built for the people who’s in demand, this classic design will keep you looking presentable on the go, with a gentle fabric for all-day comfort.
                         </div>
-                        <div className={styles['product-size']}>
+                        {/* <div className={styles['product-size']}>
                             <select name='sizes' defaultValue="" onClick={selectSizeHandler} >
                                 <option value="" disabled hidden>Select a size</option>
-                                {availableSizes.map((size, index) => (
+                                {.map((size, index) => (
                                     <option value={size} key={index} >{size}</option>
                                 ))}
                             </select>
-                        </div>
-                        <div className={styles['add-to-cart-sec']}>
+                        </div> */}
+                       {!productAdded && <div className={styles['add-to-cart-sec']}>
                             <div onClick={addToCartHandler} className={styles['add-to-cart-btn']}>
                                 <ButtonPrimary >Add To Cart</ButtonPrimary>
                             </div>
-                        </div>
+                        </div> }
+                        {productAdded && <div className={styles['add-to-cart-sec']}>
+                            <div onClick={goToCartHandler} className={styles['add-to-cart-btn']}>
+                                <ButtonPrimary >Go To Cart</ButtonPrimary>
+                            </div>
+                        </div> }
                         <ToastContainer />
                     </div>
                 </div>}

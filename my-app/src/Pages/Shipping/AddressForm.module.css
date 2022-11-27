@@ -1,0 +1,89 @@
+.address-form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 1rem;
+    border-style: solid;
+    border-color: #e3eef7;
+    border-width: 3px;
+    border-radius: 8px;
+
+
+
+}
+
+.address-form input {
+    flex-basis: 100%;
+    height: 2rem;
+    border-radius: 5px;
+    border-style: none;
+    width: 100%;
+    margin-top: .8rem;
+    padding-left: .5rem;
+    letter-spacing: .1rem;
+    background: #e3eef7;
+}
+
+.address-form textarea {
+    /* width: 95%; */
+    height: 8rem;
+    flex-basis: 100%;
+    border-radius: 4px;
+    border-style: none;
+    margin-top: 1.5rem;
+    padding: .5rem;
+    letter-spacing: .1rem;
+    background: #e3eef7;
+}
+
+.address-form-btn-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.address-form-btn-container div {
+    margin-right: .1rem;
+    margin-left: .1rem;
+}
+
+.address-form-btn {
+    margin-top: 1.5rem;
+    width: 6rem;
+    /* padding-right: .7rem; */
+}
+
+.address-form-btn button {
+    padding: 1rem;
+    border-radius: 5px;
+    background: #328fdb;
+    line-height: .3;
+    font-size: .9rem;
+    color: aliceblue;
+    letter-spacing: .1rem;
+    text-align: center;
+    border: none;
+    width: 8rem;
+}
+
+.address-form-btn button:hover {
+    background: #294f71;
+}
+
+@media(min-width:550px) {
+    .address-form input {
+        flex-basis: 47%;
+    }
+
+    .address-form {
+        width: 75%;
+    }
+}
+
+@media(min-width:850px) {
+    .address-form {
+        width: 55%;
+    }
+}

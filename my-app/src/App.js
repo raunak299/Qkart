@@ -9,6 +9,7 @@ import ProductDetails from "./Pages/ProductsPage/ProductDetails";
 import Cart from "./Pages/Cart/Cart";
 import OrderPlaced from "./Pages/OrderPlaced/OrderPlaced";
 import Wishlist from "./Pages/Wishlist/WishList";
+import ShippingAddress from "./Pages/Shipping/ShippingAddress";
 
 
 
@@ -61,6 +62,12 @@ function App() {
         <Route path='/wishlist'>
           <PrivateRoute>
             <Wishlist />
+          </PrivateRoute>
+        </Route>
+
+        <Route path='/shipping'>
+          <PrivateRoute>
+            <ShippingAddress />
           </PrivateRoute>
         </Route>
 

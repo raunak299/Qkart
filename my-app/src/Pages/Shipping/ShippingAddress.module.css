@@ -1,0 +1,18 @@
+.shipping-page{
+    min-height:100vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.shipping-page h2{
+    padding: 2rem;
+}
+
+.footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+}

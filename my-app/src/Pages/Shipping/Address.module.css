@@ -1,0 +1,29 @@
+.address-sec {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: #102a42;
+}
+
+.address-form-trigger {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+
+
+.address-form-trigger img {
+    height: 1.7rem;
+    width: 2.3rem;
+    padding-right: 1rem;
+}
+
+
+
+.address-form-trigger p {
+    font-size: 1.5rem;
+    padding-bottom: .2rem;
+    font-weight: 500;
+}
