@@ -153,7 +153,7 @@ function Authentication() {
 
     const onFormSubmitHandler = async (events) => {
         events.preventDefault();
-        console.log('not guest');
+        // console.log('not guest');
         if (!isFormValid) {
             if (register && !nameInputValid) {
                 setError('   Name field is invalid !!');
@@ -164,7 +164,7 @@ function Authentication() {
             else if (!passwordInputValid) {
                 setError('Password is invalid !!')
             }
-            console.log('#');
+            // console.log('#');
             return;
         };
 

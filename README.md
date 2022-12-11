@@ -38,8 +38,11 @@ $ npm start
 
 - React JS
 - React Context API + useReducer
+- React Hooks
+- React Router
 - React Router v5
 - Vanilla CSS
+- Mockbee Backend
 
 ## **Demo -**
 
