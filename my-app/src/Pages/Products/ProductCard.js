@@ -44,7 +44,7 @@ function ProductCard(props) {
         <div className={styles['product-card-sec']}>
 
             {wishListProductsId.includes(props.id) && <img src='https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-heart-miscellaneous-kiranshastry-lineal-color-kiranshastry.png' className={styles['wishlist']} alt='wishlist' onClick={removeWishlistHandler} />}
-            {wishListProductsId.includes(props.id) && <ToastContainer />}
+                 {wishListProductsId.includes(props.id) && <ToastContainer />}
             {!wishListProductsId.includes(props.id) && <img src="https://img.icons8.com/ultraviolet/40/000000/like--v1.png" alt='wishlist' className={styles['wishlist']} onClick={addWishlistHandler} />}
 
             <Link to={`product-details/${props.id}`} className={styles['product-card-container']}>
