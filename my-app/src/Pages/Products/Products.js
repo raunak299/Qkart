@@ -49,6 +49,7 @@ function Products() {
                 src={loadingImg}
                 alt="Loading !!"
                 className={styles["loading-sec-img"]}
+                loading="lazy"
               ></img>
             </div>
           )}
